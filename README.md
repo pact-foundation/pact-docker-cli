@@ -22,7 +22,7 @@ Multi-platform images are available, and can be used cross-platform by setting t
 - `--platform=linux/arm64`
 
   ```sh
-  docker run --rm it pactfoundation/pact-cli:latest /bin/sh -c 'uname -sm'
+  docker run --rm -it pactfoundation/pact-cli:latest /bin/sh -c 'uname -sm'
   ```
 
 ## Usage
