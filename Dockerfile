@@ -28,7 +28,7 @@ RUN apk update \
   && bundle config build.nokogiri --use-system-libraries \
   && bundle config git.allow_insecure true \
   && gem update --system 3.6.9 \
-  && gem install json -v "~>2.13" \
+  && gem install json -v "~>2.15" \
   && gem install bigdecimal -v "~>3.2" \
   && gem install racc -v "~>1.8" \
   && gem uninstall rubygems-update \
