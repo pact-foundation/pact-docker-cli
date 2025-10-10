@@ -36,17 +36,17 @@ module Pact
       Pact::StubService::CLI.start(process_argv("stub-service"))
     end
 
-    desc 'pact-broker', 'Interact with a Pact Broker (also aliased as the subcommand `broker`)'
+    desc 'pact-broker', '(legacy) Interact with a Pact Broker (also aliased as the subcommand `broker`) - use `pact-broker-cli` subcommand instead'
     def pact_broker
       ::PactBroker::Client::CLI::Broker.start(process_argv("pact-broker"))
     end
 
-    desc 'broker', 'Interact with a Pact Broker (this command is still supported by has been superseded by the pact-broker command for consistency across the various packages', hide: true
+    desc 'broker', '(legacy) Interact with a Pact Broker (this command is still supported by has been superseded by the pact-broker command for consistency across the various packages - use `pact-broker-cli` subcommand instead', hide: true
     def broker
       ::PactBroker::Client::CLI::Broker.start(process_argv("broker"))
     end
 
-    desc 'pactflow', 'Interact with PactFlow'
+    desc 'pactflow', '(legacy) Interact with PactFlow - use `pact-broker-cli pactflow` subcommand instead'
     def pactflow
       ::Pactflow::Client::CLI::Pactflow.start(process_argv("pactflow"))
     end
@@ -64,11 +64,20 @@ module Pact
       Pact::ProviderVerifier::CLI::Verify.start(process_argv(""))
     end
 
-    desc ::PactBroker::Client::CLI::Broker.commands["publish"].usage, ::PactBroker::Client::CLI::Broker.commands["publish"].description
+    desc ::PactBroker::Client::CLI::Broker.commands["publish"].usage, "(legacy) " + ::PactBroker::Client::CLI::Broker.commands["publish"].description
     long_desc ::PactBroker::Client::CLI::Broker.commands["publish"].long_description
 
     def publish
       ::PactBroker::Client::CLI::Broker.start(process_argv(""))
+    end
+
+    desc 'publish-cli', 'Publish pacts to a Pact Broker.'
+    def publish_cli
+      ARGV.shift
+      output = `./bin/pact-broker-cli publish #{ARGV.join(" ")}`
+      exit_status = $?.exitstatus
+      puts output
+      exit(exit_status)
     end
 
     desc "version", "Print the version of the CLI"
@@ -84,7 +93,7 @@ module Pact
       puts output
       exit(exit_status)
     end
-    desc 'verifier', 'Run a Pact verifier'
+    desc 'verifier', 'Verify pact(s) against a provider. Supports local and networked (http-based) files.'
     def verifier
       ARGV.shift
       output = `./bin/pact_verifier_cli #{ARGV.join(" ")}`
@@ -113,6 +122,14 @@ module Pact
         exit_status = Process.wait2(io.pid)[1].exitstatus
         exit(exit_status)
       end
+    end
+    desc 'pact-broker-cli', 'Interact with a Pact Broker'
+    def broker_cli
+      ARGV.shift
+      output = `./bin/pact-broker-cli #{ARGV.join(" ")}`
+      exit_status = $?.exitstatus
+      puts output
+      exit(exit_status)
     end
     no_commands do
       def self.exit_on_failure?

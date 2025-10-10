@@ -14,7 +14,7 @@ ADD docker/pact /usr/local/bin/pact
 
 RUN apk update \
   && apk add ruby=3.4.4-r0 \
-             ca-certificates=20250619-r0 \
+             ca-certificates=20250911-r0 \
              libressl \
              less \
              git \
@@ -29,7 +29,7 @@ RUN apk update \
   && bundle config git.allow_insecure true \
   && gem update --system 3.6.9 \
   && gem install json -v "~>2.15" \
-  && gem install bigdecimal -v "~>3.2" \
+  && gem install bigdecimal -v "~>3.3" \
   && gem install racc -v "~>1.8" \
   && gem uninstall rubygems-update \
   && gem cleanup \
@@ -75,7 +75,9 @@ RUN case ${TARGETPLATFORM} in \
     && wget -qO - https://github.com/pact-foundation/pact-reference/releases/download/pact_verifier_cli-v1.1.3/pact_verifier_cli-linux-${BIN_ARCH}.gz \
     | gunzip -fc > ./bin/pact_verifier_cli && chmod +x ./bin/pact_verifier_cli \
     && wget -qO - https://github.com/pact-foundation/pact-core-mock-server/releases/download/pact_mock_server_cli-v1.0.6/pact_mock_server_cli-linux-${BIN_ARCH}.gz \
-    | gunzip -fc > ./bin/pact_mock_server_cli && chmod +x ./bin/pact_mock_server_cli
+    | gunzip -fc > ./bin/pact_mock_server_cli && chmod +x ./bin/pact_mock_server_cli \
+    && wget -qO - https://github.com/pact-foundation/pact-broker-cli/releases/download/v0.1.0/pact-broker-cli-${BIN_ARCH}-linux-musl \
+    -O ./bin/pact-broker-cli && chmod +x ./bin/pact-broker-cli
 
 
 ENTRYPOINT ["/pact/entrypoint.sh"]

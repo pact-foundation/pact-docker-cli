@@ -58,7 +58,7 @@ Commands:
   publish PACT_DIRS_OR_FILES ...  # Publish pacts to a Pact Broker.
   stub-server                     # Run a Pact stub server
   stub-service                    # (legacy) Run a Pact stub service
-  verifier                        # Run a Pact verifier
+  verifier                        # Verify pact(s) against a provider. Supports local and networked (http-based) files.
   verify PACT_URL ...             # (legacy) Verify pact(s) against a provider. Supports local and networked (http-based) files.
   version                         # Print the version of the CLI
 
