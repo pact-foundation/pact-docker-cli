@@ -37,7 +37,8 @@ GEM
       net-http (>= 0.5.0)
     faraday-retry (2.3.2)
       faraday (~> 2.0)
-    ffi (1.17.2-x86_64-linux-gnu)
+    ffi (1.17.2-aarch64-linux-musl)
+    ffi (1.17.2-x86_64-linux-musl)
     find_a_port (1.0.1)
     httparty (0.23.2)
       csv
@@ -70,7 +71,9 @@ GEM
       thor (>= 0.20, < 2.0)
       webrick (~> 1.8)
       zeitwerk (~> 2.3)
-    pact-ffi (0.4.28.0-x86_64-linux)
+    pact-ffi (0.4.28.0-aarch64-linux-musl)
+      ffi (~> 1.15)
+    pact-ffi (0.4.28.0-x86_64-linux-musl)
       ffi (~> 1.15)
     pact-message (0.11.1)
       pact-mock_service (~> 3.1)
@@ -162,7 +165,8 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
-  x86_64-linux
+  aarch64-linux-musl
+  x86_64-linux-musl
 
 DEPENDENCIES
   bump (~> 0.9)
