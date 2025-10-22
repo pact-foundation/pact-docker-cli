@@ -1,3 +1,12 @@
+<a name="1.5.0.1"></a>
+### 1.5.0.1 (2025-10-22)
+
+#### Features
+
+* **gems**
+  * updated pact (1.67.1)	 ([2023ac0](/../../commit/2023ac0))
+  * updated pact (1.67.0), pact-ffi (~> 0.4.28), pact-support (~> 1.21, >= 1.21.2), pact-ffi (0.4.28.0-x86_64-linux)	 ([b2504a7](/../../commit/b2504a7))
+
 <a name="1.5.0.0"></a>
 ### 1.5.0.0 (2025-07-25)
 
