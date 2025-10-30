@@ -42,7 +42,7 @@ GEM
       csv
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    json (2.15.1)
+    json (2.15.2)
     jsonpath (1.1.5)
       multi_json
     logger (1.7.0)
@@ -159,6 +159,7 @@ GEM
 
 PLATFORMS
   aarch64-linux-musl
+  arm64-darwin-24
   x86_64-linux
   x86_64-linux-musl
 
