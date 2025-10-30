@@ -15,7 +15,7 @@ jobs:
     env:
       DOCKER_IMAGE_ORG_AND_NAME: pactfoundation/pact-cli
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Integration tests
         run: script/test.sh
