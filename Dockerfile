@@ -1,4 +1,4 @@
-FROM alpine:3.22.0
+FROM alpine:3.22.2
 
 LABEL maintainer="Beth Skurrie <beth@bethesque.com>"
 ARG TARGETPLATFORM
