@@ -31,6 +31,7 @@ RUN apk update \
   && gem install json -v "~>2.18" \
   && gem install bigdecimal -v "~>3.2" \
   && gem install racc -v "~>1.8" \
+  && gem install io-console -v "~>0.8" \
   && gem uninstall rubygems-update \
   && gem cleanup \
   && apk del build-dependencies \
