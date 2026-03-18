@@ -12,6 +12,7 @@ PATH
       bigdecimal (~> 3.2)
       io-console (~> 0.8)
       json (~> 2.18)
+      pact (< 2)
       pact-mock_service
       pact-provider-verifier
       pact_broker-client (~> 1.28)
@@ -44,7 +45,7 @@ GEM
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     io-console (0.8.2)
-    json (2.18.1)
+    json (2.19.2)
     jsonpath (1.1.5)
       multi_json
     logger (1.7.0)
@@ -142,7 +143,7 @@ GEM
     rspec-expectations (3.13.5)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
-    rspec-mocks (3.13.7)
+    rspec-mocks (3.13.8)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.7)
@@ -167,6 +168,7 @@ GEM
 PLATFORMS
   aarch64-linux-musl
   arm64-darwin-24
+  arm64-darwin-25
   x86_64-linux
   x86_64-linux-musl
 
