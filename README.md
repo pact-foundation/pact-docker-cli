@@ -14,6 +14,8 @@ This tool provides an amalgamated CLI of all the Pact CLI tools available in the
 [![size: amd64](https://badgen.net/docker/size/pactfoundation/pact-cli/latest/amd64?icon=docker&label=size%3Aamd64)](https://hub.docker.com/r/pactfoundation/pact-cli)
 [![size: arm64](https://badgen.net/docker/size/pactfoundation/pact-cli/latest/arm64?icon=docker&label=size%3Aarm64)](https://hub.docker.com/r/pactfoundation/pact-cli)
 
+<img referrerpolicy="no-referrer-when-downgrade" src="https://static.scarf.sh/a.png?x-pxid=1625ac12-1964-4715-995b-848a5ac3cc34&page=README" />
+
 ## Platforms
 
 Multi-platform images are available, and can be used cross-platform by setting the `platform` flag.
@@ -47,7 +49,7 @@ If you are using a Pact Broker with bearer token authentication (eg. PactFlow), 
 ### Help
 
 ```
-$ docker run --rm pactfoundation/pact-cli:latest help
+$ docker run --rm docker.swagger.io/pactfoundation/pact-cli:latest help
 Commands:
   help [COMMAND]                  # Describe available commands or one specific command
   mock-server                     # Run a Pact mock server
@@ -63,7 +65,7 @@ Commands:
   version                         # Print the version of the CLI
 
 
-$ docker run --rm pactfoundation/pact-cli:latest pact-broker help
+$ docker run --rm docker.swagger.io/pactfoundation/pact-cli:latest pact-broker help
 Commands:
   pact-broker can-i-deploy -a, --pacticipant=PACTICIPANT -b, --broker-base-url=BRO...
   pact-broker create-version-tag -a, --pacticipant=PACTICIPANT -b, --broker-base-u...
@@ -266,7 +268,7 @@ docker run --rm \
 To meet with [Docker consistency rules](https://github.com/docker-library/official-images#consistency) `sh` access is provided, _NOTE:_ `bash` is not installed in the container
 
 ```
-$ docker run --rm pactfoundation/pact-cli sh -c 'ls'
+$ docker run --rm docker.swagger.io/pactfoundation/pact-cli sh -c 'ls'
 Gemfile
 Gemfile.lock
 bin
@@ -277,7 +279,7 @@ pact-cli.gemspec
 ```
 
 ```
-$ docker run --rm pactfoundation/pact-cli ls
+$ docker run --rm docker.swagger.io/pactfoundation/pact-cli ls
 Gemfile
 Gemfile.lock
 bin
@@ -294,3 +296,15 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/pact-f
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Anonymized analytics
+
+`pactfoundation/pact-broker` uses [Scarf](https://scarf.sh/) to collect [anonymized download analytics](https://about.scarf.sh/about). These analytics help support the maintainers of this image and ONLY run when you pull the image through the Scarf gateway (the pull commands shown throughout this README). To opt out, pull the image directly from Docker Hub:
+
+```sh
+docker pull pactfoundation/pact-broker
+```
+
+Alternatively, block `static.scarf.sh` at the network level (or disable image loading in your browser when viewing this README) to disable the README impression pixel.
+
+For more information, see [docs.pact.io/telemetry](https://docs.pact.io/telemetry).
