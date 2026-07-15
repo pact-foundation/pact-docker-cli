@@ -1,4 +1,4 @@
-FROM alpine:3.22.2
+FROM alpine:3.24.1
 
 ENV NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 ENV BUNDLE_SILENCE_ROOT_WARNING=1
@@ -20,10 +20,11 @@ RUN apk update \
              ruby-rdoc \
   && bundle config build.nokogiri --use-system-libraries \
   && bundle config git.allow_insecure true \
-  && gem update --system 3.5.23 \
+  && gem update --system 4.0.16 \
   && gem install json \
   && gem install bigdecimal \
   && gem install racc \
+  && gem install io-console \
   && gem uninstall rubygems-update
 
 ENV HOME=/pact

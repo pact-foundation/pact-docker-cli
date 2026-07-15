@@ -1,4 +1,4 @@
-FROM alpine:3.22.2
+FROM alpine:3.24.1
 
 LABEL maintainer="Beth Skurrie <beth@bethesque.com>"
 ARG TARGETPLATFORM
@@ -13,23 +13,23 @@ ADD docker/gemrc /root/.gemrc
 ADD docker/pact /usr/local/bin/pact
 
 RUN apk update \
-  && apk add ruby=3.4.4-r0 \
-             ca-certificates=20250911-r0 \
+  && apk add ruby=3.4.9-r0 \
+             ca-certificates=20260611-r0 \
              libressl \
              less \
              git \
   && apk add --virtual "build-dependencies" \
-             build-base=0.5-r3 \
-             ruby-dev=3.4.4-r0 \
+             build-base=0.5-r4 \
+             ruby-dev=3.4.9-r0 \
              libressl-dev \
-             ruby-rdoc=3.4.4-r0 \
+             ruby-rdoc=3.4.9-r0 \
   && gem install bundler -v "~>2.6" \
   && bundler -v \
   && bundle config build.nokogiri --use-system-libraries \
   && bundle config git.allow_insecure true \
-  && gem update --system 3.6.9 \
-  && gem install json -v "~>2.18" \
-  && gem install bigdecimal -v "~>3.2" \
+  && gem update --system 4.0.16 \
+  && gem install json -v "~>2.19" \
+  && gem install bigdecimal -v "~>4.1" \
   && gem install racc -v "~>1.8" \
   && gem install io-console -v "~>0.8" \
   && gem uninstall rubygems-update \
