@@ -21,7 +21,7 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    awesome_print (1.9.2)
+    amazing_print (2.0.0)
     base64 (0.3.0)
     bigdecimal (4.1.2)
     bump (0.10.0)
@@ -95,11 +95,12 @@ GEM
       rackup (~> 2.0)
       rspec (~> 3.5)
       rspec_junit_formatter (~> 0.3)
-    pact-support (1.21.2)
-      awesome_print (~> 1.9)
-      diff-lcs (~> 1.5)
+    pact-support (1.21.7)
+      amazing_print (~> 2.0)
+      diff-lcs (~> 1.6)
       expgen (~> 0.1)
       jsonpath (~> 1.0)
+      logger (< 2.0)
       rainbow (~> 3.1.1)
       string_pattern (~> 2.0)
     pact_broker-client (1.78.0)
