@@ -14,7 +14,7 @@ ADD docker/pact /usr/local/bin/pact
 
 RUN apk update \
   && apk add ruby=3.4.9-r0 \
-             ca-certificates=20260611-r0 \
+             ca-certificates=20260909-r0 \
              libressl \
              less \
              git \
