@@ -1,6 +1,6 @@
 services:
   api:
-    image: ruby:3.4-alpine
+    image: ruby:3.4-alpine@sha256:833b4b53c8e8c5d3dbb2fa1c357b03e79da22e52ec32831bc368eecb9a861397
     environment:
       # Setting the response body as an environment variable is just a way
       # to get around the multiple layers of nested quotes in the command!
@@ -10,7 +10,7 @@ services:
       - "9292"
 
   pact_verifier:
-    image: pactfoundation/pact-cli:latest
+    image: pactfoundation/pact-cli:latest@sha256:72f1df83a7c42abd02e69a0fa21c3adc037d72c2852daa9f2910bb35617b207b
     depends_on:
       - api
     environment:
