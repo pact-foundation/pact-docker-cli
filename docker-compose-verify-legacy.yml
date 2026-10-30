@@ -1,6 +1,6 @@
 services:
   api:
-    image: ruby:3.4-alpine
+    image: ruby:4.0-alpine@sha256:f1e530793cc09e1093417a4c9956069407155e1883d02beb30bda35ae54a47a3
     environment:
       # Setting the response body as an environment variable is just a way
       # to get around the multiple layers of nested quotes in the command!
