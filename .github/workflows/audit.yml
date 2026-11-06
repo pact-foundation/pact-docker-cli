@@ -19,7 +19,7 @@ jobs:
     env:
       TAG: latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Audit Docker image for amd64
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: ./script/release-workflow/audit.sh
